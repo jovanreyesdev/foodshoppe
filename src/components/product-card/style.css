@@ -1,0 +1,19 @@
+.product-card.ui.card > .image > img,
+.product-card.ui.cards > .card > .image > img {
+  max-width: 5rem;
+  margin: 2rem auto;
+}
+
+.product-card.ui.card > .content > .header {
+  position: relative;
+}
+
+.product-card.ui.card > .content > .header > button.button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.product-card.ui.card > .content > .header > .ui.header:last-child {
+  margin-bottom: 0.5rem;
+}
