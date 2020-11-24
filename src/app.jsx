@@ -1,6 +1,7 @@
 // @flow
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Nav from './components/nav';
 import ProductCategorySection from './components/product-category-section';
 
 const App = () => {
@@ -28,14 +29,21 @@ const App = () => {
     execute();
   }, []);
 
-  return state.categories.map((c) => {
-    const products = state.products.filter((p) => p.category.includes(c.id));
-    const randomized = products.sort( () => 0.5 - Math.random());
+  return (
+    <>
+      <Nav />
+      {
+        state.categories.map((c) => {
+          const products = state.products.filter((p) => p.category.includes(c.id));
+          const randomized = products.sort(() => 0.5 - Math.random());
 
-     return (
-      <ProductCategorySection products={randomized} key={c.id} category={c} />
-    );
-  });
+          return (
+            <ProductCategorySection products={randomized} key={c.id} category={c} />
+          );
+        })
+      }
+    </>
+  );
 };
 
 export default App;

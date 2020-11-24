@@ -1,6 +1,9 @@
 // @type
 import React from 'react';
-import { Card, Image, Icon, Header, Button } from 'semantic-ui-react';
+import {
+  Card, Image, Header,
+  Button,
+} from 'semantic-ui-react';
 import { IProduct } from '../../types/product';
 
 import './style.css';
